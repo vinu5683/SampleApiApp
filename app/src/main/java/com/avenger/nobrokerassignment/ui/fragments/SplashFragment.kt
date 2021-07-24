@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
+import com.airbnb.lottie.LottieAnimationView
 import com.avenger.nobrokerassignment.R
 
 
@@ -24,10 +25,14 @@ class SplashFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val lottieAnimation = view.findViewById<LottieAnimationView>(R.id.dataAnimation)
+        lottieAnimation.setAnimation(R.raw.datasplash)
+        lottieAnimation.playAnimation()
+
         val navController = Navigation.findNavController(view)
 
         Handler().postDelayed({
-                              navController.navigate(R.id.action_splashFragment_to_homeFragment)
+            navController.navigate(R.id.action_splashFragment_to_homeFragment)
         }, 3000)
     }
 }

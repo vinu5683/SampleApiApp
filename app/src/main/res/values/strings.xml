@@ -2,5 +2,5 @@
     <string name="app_name">NoBrokerAssignment</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="search_caption_text">Search</string>
+    <string name="search_caption_text">Search (3 characters)</string>
 </resources>

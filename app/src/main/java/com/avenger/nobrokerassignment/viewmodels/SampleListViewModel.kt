@@ -1,5 +1,6 @@
 package com.avenger.nobrokerassignment.viewmodels
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
@@ -13,15 +14,35 @@ class SampleListViewModel(private val sampleRepository: SampleRepository) : View
 
     fun getAllResponse(): LiveData<List<SampleEntity>> {
         return liveData(Dispatchers.IO) {
-            val data = sampleRepository.getAllResponse()
-            if (data.value!=null){
-                emit(data.value!!)
+            try {
+                val data = sampleRepository.getAllResponse()
+                if (data.value != null) {
+                    emit(data.value!!)
+                }
+            } catch (e: Exception) {
+                Log.d("TAG", "getAllResponse: No Internet")
             }
         }
     }
 
-    fun getMyList(): LiveData<List<SampleEntity>> {
-        return sampleRepository.getResponseList()
+    fun getMyList(): LiveData<List<SampleEntity>>? {
+        try {
+            return sampleRepository.getResponseList()
+        } catch (e: Exception) {
+            return null
+        }
+    }
+
+    fun setSampleEntityObj(sampleEntity: SampleEntity) {
+        sampleRepository.setSampleEntityObj(sampleEntity)
+    }
+
+    fun getSampleEntityObj(): SampleEntity {
+        return sampleRepository.getSampleEntityObj()
+    }
+
+    fun searchByText(trim: String): LiveData<List<SampleEntity>>? {
+        return sampleRepository.getMatchingResponse(trim)
     }
 
 }

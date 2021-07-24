@@ -29,11 +29,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:hint="@string/search_caption_text"
+            app:counterMaxLength="20"
             app:startIconDrawable="@drawable/ic_baseline_search_24">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/searchTextBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:maxLines="1"
                 android:textColor="@color/graytextblack"
                 android:textSize="18sp" />
 
@@ -46,6 +49,18 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/llHeader" />
+        app:layout_constraintTop_toBottomOf="@id/llHeader"
+        app:shimmer_recycler_layout="@layout/demo_shimmer_grid" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/noDataAnimation"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llHeader"
+        app:lottie_loop="true" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

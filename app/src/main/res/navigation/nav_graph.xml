@@ -12,7 +12,13 @@
         tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_splashFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -21,11 +27,16 @@
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_selectedItemFragment"
-            app:destination="@id/selectedItemFragment" />
+            app:destination="@id/selectedItemFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/selectedItemFragment"
         android:name="com.avenger.nobrokerassignment.ui.fragments.SelectedItemFragment"
         android:label="fragment_selected_item"
         tools:layout="@layout/fragment_selected_item" />
+
 </navigation>
