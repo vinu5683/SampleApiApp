@@ -12,8 +12,8 @@ interface SampleDAO {
     @Query("select * from sample_table")
     fun getMySampleList(): LiveData<List<SampleEntity>>
 
-    @Query("select * from sample_table Limit :limit Offset :offset")
-    fun getSampleListByIndex(limit: Int, offset: Int): LiveData<List<SampleEntity>>
+//    @Query("select * from sample_table Limit :limit Offset :offset")
+//    fun getSampleListByIndex(limit: Int, offset: Int): LiveData<ArrayList<SampleEntity>>
 
     @Delete
     fun removeEntry(entity: SampleEntity)

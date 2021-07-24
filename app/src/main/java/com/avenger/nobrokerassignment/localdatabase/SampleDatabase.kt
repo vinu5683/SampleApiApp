@@ -23,7 +23,7 @@ abstract class SampleDatabase() : RoomDatabase() {
                 val builder = Room.databaseBuilder(
                     context.applicationContext,
                     SampleDatabase::class.java,
-                    "sample_db"
+                    "sampledb"
                 )
                 builder.fallbackToDestructiveMigration()
                 return builder.build()

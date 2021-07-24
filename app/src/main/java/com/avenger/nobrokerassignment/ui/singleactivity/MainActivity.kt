@@ -11,12 +11,10 @@ import com.avenger.nobrokerassignment.util.GetSampleViewModel
 import com.avenger.nobrokerassignment.viewmodels.SampleListViewModel
 import com.avenger.nobrokerassignment.viewmodels.SampleListViewModelFactory
 
-class MainActivity : AppCompatActivity(), GetSampleViewModel {
+class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
-    private lateinit var appClass: MyApplication
-    private lateinit var repository: SampleRepository
-    private lateinit var sampleViewModel: SampleListViewModel
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +23,6 @@ class MainActivity : AppCompatActivity(), GetSampleViewModel {
         initializeTheRoom()
 
         //initializing the interface for getting viewmodel
-        getSampleViewModel = this
     }
 
     private fun initializeNavigationController() {
@@ -35,18 +32,12 @@ class MainActivity : AppCompatActivity(), GetSampleViewModel {
 
     //TODO: Initialize RoomDatabase.
     private fun initializeTheRoom() {
-        appClass = application as MyApplication
-        repository = appClass.repository
-        val viewModelFactory = SampleListViewModelFactory(repository)
-        sampleViewModel =
-            ViewModelProviders.of(this, viewModelFactory).get(SampleListViewModel::class.java)
+
     }
 
     companion object {
         lateinit var getSampleViewModel: GetSampleViewModel
     }
 
-    override fun getSampleViewModel(): SampleListViewModel {
-        return sampleViewModel
-    }
+
 }
