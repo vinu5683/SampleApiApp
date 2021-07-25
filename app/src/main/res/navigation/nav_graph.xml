@@ -37,6 +37,16 @@
         android:id="@+id/selectedItemFragment"
         android:name="com.avenger.nobrokerassignment.ui.fragments.SelectedItemFragment"
         android:label="fragment_selected_item"
-        tools:layout="@layout/fragment_selected_item" />
+        tools:layout="@layout/fragment_selected_item">
+        <action
+            android:id="@+id/action_selectedItemFragment_self"
+            app:destination="@id/selectedItemFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/selectedItemFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 
 </navigation>

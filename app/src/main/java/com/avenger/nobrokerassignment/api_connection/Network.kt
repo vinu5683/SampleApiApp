@@ -13,7 +13,7 @@ class Network {
         fun getInstance(): Retrofit {
             val builder = Retrofit.Builder()
 //                .baseUrl("https://api.jsonbin.io/")
-                .baseUrl("https://mocki.io/")
+                .baseUrl("https://api.jsonbin.io/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build())
             return builder.build()

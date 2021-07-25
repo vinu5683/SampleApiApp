@@ -153,7 +153,7 @@ class HomeFragment : Fragment(), SampleListAdapterInterface {
                                 list?.addAll(it as ArrayList<SampleEntity>)
                                 mRvAdapter.notifyDataSetChanged()
                             } else {
-
+                                showEmptyAnimation()
                             }
                         })
                     }

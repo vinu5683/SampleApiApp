@@ -38,19 +38,44 @@
                 android:id="@+id/tvTitleDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="10dp"
                 android:maxLines="1"
                 android:text="Title"
                 android:textColor="@color/graytextblack"
-                android:textSize="20sp" />
+                android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/tvSubTitleDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="10dp"
                 android:text="Sub title"
-                android:textSize="18sp" />
+                android:textColor="#4A4A4A"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="#c4c4c4" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:maxLines="1"
+                android:text="You may intrested in"
+                android:textColor="@color/graytextblack"
+                android:textSize="22sp" />
+
+
+            <com.todkars.shimmer.ShimmerRecyclerView
+                android:id="@+id/rvHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="20sp"
+                app:shimmer_recycler_layout="@layout/demo_shimmer_grid" />
         </LinearLayout>
 
     </ScrollView>
